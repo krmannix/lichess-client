@@ -5,5 +5,9 @@
   "main": "index.js",
   "repository": "git@github.com:krmannix/lichess.git",
   "author": "Kevin Mannix <kmannix@bu.edu>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
 }
