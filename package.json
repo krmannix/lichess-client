@@ -1,0 +1,9 @@
+{
+  "name": "lichess",
+  "version": "0.0.1",
+  "description": "lichess API wrapper for node.js",
+  "main": "index.js",
+  "repository": "git@github.com:krmannix/lichess.git",
+  "author": "Kevin Mannix <kmannix@bu.edu>",
+  "license": "MIT"
+}
