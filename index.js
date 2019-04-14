@@ -1,7 +1,7 @@
 'use strict';
 
-const games = require('./games.js')
+const Games = require('./lib/games.js')
 
 module.exports = {
-  games: games,
+  games: Games,
 }
