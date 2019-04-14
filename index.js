@@ -1,7 +1,5 @@
 'use strict';
 
-const Games = require('./lib/games.js')
+const Client = require('./lib/client')
 
-module.exports = {
-  games: Games,
-}
+module.exports = Client
