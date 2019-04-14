@@ -5,12 +5,12 @@ node.js lichess API wrapper
 * [Lichess API reference](https://lichess.org/api)
 
 #### Account
-* Get my profile
-* Get my profile
-* Get my email address
-* Get my preferences
-* Get my kid mode status
-* Set my kid mode status
+* ~~Get my profile~~
+* ~~Get my profile~~
+* ~~Get my email address~~
+* ~~Get my preferences~~
+* ~~Get my kid mode status~~
+* ~~Set my kid mode status~~
 
 #### Users
 * Get real-time users status
@@ -31,10 +31,10 @@ node.js lichess API wrapper
 #### Games
 * ~~Export one game~~ (0.0.2)
 * ~~Export games of a user~~ (0.0.2)
-* ~~Export games by IDs~~
+* ~~Export games by IDs~~ (0.0.3)
 * Stream current games
-* ~~Get ongoing games~~
-* ~~Get current TV games~~
+* ~~Get ongoing games~~ (0.0.3)
+* ~~Get current TV games~~ (0.0.3)
 
 #### Teams
 * Get members of a team
