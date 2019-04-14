@@ -1,6 +1,6 @@
 {
   "name": "lichess",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "lichess API wrapper for node.js",
   "main": "index.js",
   "repository": "git@github.com:krmannix/lichess.git",
