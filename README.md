@@ -31,10 +31,10 @@ node.js lichess API wrapper
 #### Games
 * ~~Export one game~~ (0.0.2)
 * ~~Export games of a user~~ (0.0.2)
-* Export games by IDs
+* ~~Export games by IDs~~
 * Stream current games
-* Get ongoing games
-* Get current TV games
+* ~~Get ongoing games~~
+* ~~Get current TV games~~
 
 #### Teams
 * Get members of a team
