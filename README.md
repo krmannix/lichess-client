@@ -1,16 +1,98 @@
 # lichess
-node.js lichess API wrapper
+♟️ node.js lichess API wrapper ♙
+
+### Getting Started
+
+* [Create a Lichess account](https://lichess.org/signup)
+* [Generate a Lichess API token](https://lichess.org/account/oauth/token)
+
+To use, include `lichess` in your project and initialize with your API token:
+```js
+const Lichess = require('./index')
+
+const lichess = new Lichess('apitoken')
+```
+**_Note_: lichess is not yet published to npm**
+
+### Usage
+
+#### Account
+
+###### [Get my profile](https://lichess.org/api#operation/accountMe)
+```js
+lichess.account.account()
+```
+
+###### [Get my email address](https://lichess.org/api#operation/accountEmail)
+```js
+lichess.account.email()
+```
+
+###### [Get my preferences](https://lichess.org/api#operation/account)
+```js
+lichess.account.preferences()
+```
+
+###### [Get my kid mode status](https://lichess.org/api#operation/accountKid)
+```js
+lichess.account.kid()
+```
+
+###### [Turn on kid mode](https://lichess.org/api#operation/accountKidPost)
+**_Note_: You will need `preference:write` permissions for the associated API token**
+```js
+lichess.account.kidOn()
+```
+
+###### [Turn off kid mode](https://lichess.org/api#operation/accountKidPost)
+**_Note_: You will need `preference:write` permissions for the associated API token**
+```js
+lichess.account.kidOff()
+```
+
+#### Games
+
+###### [Export one game](https://lichess.org/api#operation/gamePgn)
+```js
+let gameId = '123'
+let options = { moves: true } // all options specified in API docs
+lichess.games.get(gameId, options)
+```
+
+###### [Export games of a user](https://lichess.org/api#operation/apiGamesUser)
+```js
+let username = 'bestplayerever'
+let options = { max: 5 } // all options specified in API docs
+lichess.games.listByUser(username, options)
+```
+
+###### [Export games by IDs](https://lichess.org/api#operation/gamesExportIds)
+```js
+let ids = ['123', '456']
+let options = { moves: true } // all options specified in API docs
+lichess.games.listByIds(ids, options)
+```
+
+###### [Get ongoing games](https://lichess.org/api#operation/apiAccountPlaying)
+```js
+let options = { nb: 15 } // all options specified in API docs
+lichess.games.current(options)
+```
+
+###### [Get current TV games](https://lichess.org/api#operation/tvChannels)
+```js
+lichess.games.currentTv(options)
+```
 
 ### API coverage
 * [Lichess API reference](https://lichess.org/api)
 
 #### Account
-* ~~Get my profile~~
-* ~~Get my profile~~
-* ~~Get my email address~~
-* ~~Get my preferences~~
-* ~~Get my kid mode status~~
-* ~~Set my kid mode status~~
+* ~~Get my profile~~ (0.0.4)
+* ~~Get my email address~~ (0.0.4)
+* ~~Get my preferences~~ (0.0.4)
+* ~~Get my kid mode status~~ (0.0.4)
+* ~~Set my kid mode status~~ (0.0.4)
 
 #### Users
 * Get real-time users status
