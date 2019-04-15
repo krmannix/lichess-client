@@ -3,12 +3,14 @@
 const Account = require('./lib/account')
 const Client = require('./lib/client')
 const Games = require('./lib/games')
+const Relations = require('./lib/relations')
 
 class Lichess {
   constructor(token = null) {
     const client = new Client(token)
     this._account = new Account(client)
     this._games = new Games(client)
+    this._relations = new Relations(client)
   }
 
   get account() {
@@ -17,6 +19,10 @@ class Lichess {
 
   get games() {
     return this._games
+  }
+
+  get relations() {
+    return this._relations
   }
 }
 

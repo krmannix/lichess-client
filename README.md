@@ -84,6 +84,21 @@ lichess.games.current(options)
 lichess.games.currentTv(options)
 ```
 
+#### Relations
+
+###### [Get users followed by a user](https://lichess.org/api#operation/apiUserFollowing)
+```js
+let username = 'bestplayerever'
+lichess.relations.following(username)
+```
+
+###### [Get users who follow a user](https://lichess.org/api#operation/apiUserFollowers)
+```js
+let username = 'bestplayerever'
+lichess.relations.followers(username)
+```
+
+
 ### API coverage
 * [Lichess API reference](https://lichess.org/api)
 
@@ -107,8 +122,8 @@ lichess.games.currentTv(options)
 * Get titled users
 
 #### Relations
-* Get users followed by a user
-* Get users who follow a user
+* ~~Get users followed by a user~~ (0.0.5)
+* ~~Get users who follow a user~~ (0.0.5)
 
 #### Games
 * ~~Export one game~~ (0.0.2)
