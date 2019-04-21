@@ -50,6 +50,50 @@ lichess.account.kidOn()
 lichess.account.kidOff()
 ```
 
+#### Users
+
+###### [Get real-time users status](https://lichess.org/api#operation/accountMe)
+```js
+let usernames = ['bestplayerever', 'runnerup']
+lichess.users.statusesByUsernames(usernames)
+```
+
+###### [Get user public data](https://lichess.org/api#operation/apiUser)
+```js
+let username = 'bestplayerever'
+lichess.users.get(username)
+```
+
+###### [Get user activity](https://lichess.org/api#operation/apiUserActivity)
+```js
+let username = 'bestplayerever'
+lichess.users.activityByUsername(username)
+```
+
+###### [Get users by ID](https://lichess.org/api#operation/apiUsers)
+```js
+let usernames = ['bestplayerever', 'runnerup']
+lichess.users.listByUsernames(usernames)
+```
+
+###### [Get members of a team](https://lichess.org/api#operation/teamIdUsers)
+```js
+let team = 'ateam'
+lichess.users.listByTeamId(team)
+```
+
+###### [Get live streamers](https://lichess.org/api#operation/streamerLive)
+```js
+lichess.users.listStreams()
+```
+
+###### [Get titled users](https://lichess.org/api#operation/usersTitled)
+```js
+let titles = ['GM', 'WCM']
+let options = { online: false }
+lichess.users.listByTitle(titles, options)
+```
+
 #### Games
 
 ###### [Export one game](https://lichess.org/api#operation/gamePgn)
@@ -110,16 +154,13 @@ lichess.relations.followers(username)
 * ~~Set my kid mode status~~ (0.0.4)
 
 #### Users
-* Get real-time users status
-* Get all top 10
-* Get one leaderboard
-* Get user public data
-* Get rating history of a user
-* Get user activity
-* Get users by ID
-* Get members of a team
-* Get live streamers
-* Get titled users
+* ~~Get real-time users status~~ (0.0.6)
+* ~~Get user public data~~ (0.0.6)
+* ~~Get user activity~~ (0.0.6)
+* ~~Get users by ID~~ (0.0.6)
+* ~~Get members of a team~~ (0.0.6)
+* ~~Get live streamers~~ (0.0.6)
+* ~~Get titled users~~ (0.0.6)
 
 #### Relations
 * ~~Get users followed by a user~~ (0.0.5)
