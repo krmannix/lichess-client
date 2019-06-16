@@ -1,4 +1,4 @@
-# lichess
+# lichess-client
 ♟️ node.js lichess API wrapper ♙
 
 ### Getting Started
@@ -6,13 +6,14 @@
 * [Create a Lichess account](https://lichess.org/signup)
 * [Generate a Lichess API token](https://lichess.org/account/oauth/token)
 
-To use, include `lichess` in your project and initialize with your API token:
+To use, install via npm, include `lichess-client` in your project, and initialize with your API token:
+```bash
+npm install lichess-client
+```
 ```js
-const Lichess = require('./index')
-
+const Lichess = require('lichess-client')
 const lichess = new Lichess('apitoken')
 ```
-**_Note_: lichess is not yet published to npm**
 
 ### Usage
 
