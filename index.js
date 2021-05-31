@@ -1,6 +1,7 @@
 'use strict';
 
-const Account = require('./lib/account')
+const Account = require('./lib/account');
+const Bot = require('./lib/bot');
 const Client = require('./lib/client')
 const Games = require('./lib/games')
 const Relations = require('./lib/relations')
@@ -13,6 +14,7 @@ class Lichess {
     this._games = new Games(client)
     this._relations = new Relations(client)
     this._users = new Users(client)
+    this._bot = new Bot(client)
   }
 
   get account() {
@@ -29,6 +31,10 @@ class Lichess {
 
   get users() {
     return this._users
+  }
+
+  get bot() {
+    return this._bot
   }
 }
 
