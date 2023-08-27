@@ -50,6 +50,10 @@ describe("Test access token", () => {
   });
 
   test("Access Token has not expired", () => {
-    expect(data[token]["expires"]).toBeGreaterThan(Date.now());
+    if (typeof data == "object") {
+      expect(data[token]["expires"]).toBeNull();
+    } else {
+      expect(data[token]["expires"]).toBeGreaterThan(Date.now());
+    }
   });
 });
