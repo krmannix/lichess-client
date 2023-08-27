@@ -84,15 +84,9 @@ lichess.users.listByTeamId(team)
 ```
 
 ###### [Get live streamers](https://lichess.org/api#operation/streamerLive)
-```js
-lichess.users.listStreams()
-```
 
-###### [Get titled users](https://lichess.org/api#operation/usersTitled)
 ```js
-let titles = ['GM', 'WCM']
-let options = { online: false }
-lichess.users.listByTitle(titles, options)
+lichess.users.listStreams();
 ```
 
 #### Games
@@ -119,30 +113,116 @@ lichess.games.listByIds(ids, options)
 ```
 
 ###### [Get ongoing games](https://lichess.org/api#operation/apiAccountPlaying)
-```js
-let options = { nb: 15 } // all options specified in API docs
-lichess.games.current(options)
-```
 
-###### [Get current TV games](https://lichess.org/api#operation/tvChannels)
 ```js
-lichess.games.currentTv(options)
+let options = { nb: 15 }; // all options specified in API docs
+lichess.games.current(options);
 ```
 
 #### Relations
 
 ###### [Get users followed by a user](https://lichess.org/api#operation/apiUserFollowing)
+
 ```js
-let username = 'bestplayerever'
-lichess.relations.following(username)
+let username = "bestplayerever";
+lichess.relations.following(username);
 ```
 
-###### [Get users who follow a user](https://lichess.org/api#operation/apiUserFollowers)
+#### Swiss tournaments
+
+###### [Create a new Swiss tournament](https://lichess.org/api#tag/Swiss-tournaments/operation/apiSwissNew)
+
 ```js
-let username = 'bestplayerever'
-lichess.relations.followers(username)
+let teamId = "awesometeamid";
+let options = {
+  clock: {
+    limit: 300,
+    increment: 3,
+  },
+  nbRounds: 5,
+};
+lichess.swiss.create(teamId, options);
 ```
 
+###### [Get info about a Swiss tournament](https://lichess.org/api#tag/Swiss-tournaments/operation/swiss)
+
+```js
+let tournamentId = "35Rw0INn";
+lichess.swiss.get(tournamentId);
+```
+
+###### [Manually schedule the next round](https://lichess.org/api#tag/Swiss-tournaments/operation/apiSwissScheduleNextRound)
+
+```js
+let tournamentId = "35Rw0INn";
+let timestamp = 2524521600000;
+lichess.swiss.manualSchedule(tournamentId, timestamp);
+```
+
+###### [Join a Swiss tournament](https://lichess.org/api#tag/Swiss-tournaments/operation/apiSwissJoin)
+
+```js
+let tournamentId = "35Rw0INn";
+let password = "preciousPassword";
+lichess.swiss.join(tournamentId, password);
+```
+
+###### [Pause or leave a swiss tournament](https://lichess.org/api#tag/Swiss-tournaments/operation/apiSwissWithdraw)
+
+```js
+let tournamentId = "35Rw0INn";
+lichess.swiss.pause(tournamentId);
+```
+
+###### [Terminate a Swiss tournament](https://lichess.org/api#tag/Swiss-tournaments/operation/apiSwissTerminate)
+
+```js
+let tournamentId = "35Rw0INn";
+lichess.swiss.terminate(tournamentId);
+```
+
+###### [Export TRF of a Swiss tournament](https://lichess.org/api#tag/Swiss-tournaments/operation/swissTrf)
+
+```js
+let tournamentId = "35Rw0INn";
+lichess.swiss.exportTRF(tournamentId);
+```
+
+###### [Export games of a Swiss tournament (as PGN)](https://lichess.org/api#tag/Swiss-tournaments/operation/gamesBySwiss)
+
+```js
+let tournamentId = "35Rw0INn";
+let options = {
+  clocks: true,
+};
+lichess.swiss.exportGamesPGN(tournamentId, options);
+```
+
+###### [Export games of a Swiss tournament (as JSON)](https://lichess.org/api#tag/Swiss-tournaments/operation/gamesBySwiss)
+
+```js
+let tournamentId = "35Rw0INn";
+let options = {
+  clocks: true,
+};
+lichess.swiss.exportGamesJSON(tournamentId, options);
+```
+
+###### [Get results of a swiss tournament](https://lichess.org/api#tag/Swiss-tournaments/operation/resultsBySwiss)
+
+```js
+let tournamentId = "35Rw0INn";
+let number = 10;
+lichess.swiss.results(tournamentId, number);
+```
+
+###### [Get team swiss tournaments](https://lichess.org/api#tag/Swiss-tournaments/operation/apiTeamSwiss)
+
+```js
+let teamId = "awesometeamid";
+let max = 10;
+lichess.swiss.getAll(teamId, max);
+```
 
 ### API coverage
 * [Lichess API reference](https://lichess.org/api)
@@ -275,17 +355,18 @@ lichess.relations.followers(username)
 * Get team Arena tournaments
 
 #### Swiss tournaments
-* Create a new Swiss tournament
-* Get info about a Swiss tournament
-* Update a Swiss tournament
-* Manually schedule the next round
-* Join a Swiss tournament
-* Pause or leave a swiss tournament
-* Terminate a Swiss tournament
-* Export TRF of a Swiss tournament
-* Export games of a Swiss tournament
-* Get results of a swiss tournament
-* Get team swiss tournaments
+
+- ~~Create a new Swiss tournament~~ (0.0.7)
+- ~~Get info about a Swiss tournament~~ (0.0.7)
+- Update a Swiss tournament 
+- ~~Manually schedule the next round~~ (0.0.7)
+- ~~Join a Swiss tournament~~ (0.0.7)
+- ~~Pause or leave a swiss tournament~~ (0.0.7)
+- ~~Terminate a Swiss tournament~~ (0.0.7)
+- ~~Export TRF of a Swiss tournament~~ (0.0.7)
+- ~~Export games of a Swiss tournament~~ (0.0.7)
+- ~~Get results of a swiss tournament~~ (0.0.7)
+- ~~Get team swiss tournaments~~ (0.0.7)
 
 #### Simuls
 * Get current simuls
