@@ -121,9 +121,16 @@ describe("Get info about a Swiss tournament", () => {
 
 describe("Update a Swiss tournament", () => {
   let data;
+  const options = {
+    clock: {
+      limit: 600,
+      increment: 5,
+    },
+    nbRounds: 10,
+  };
 
   beforeAll(async () => {
-    data = await lichess.swiss.update(tournamentId);
+    data = await lichess.swiss.update(tournamentId, options);
   });
 
   test("Data is an object", () => {
@@ -150,7 +157,7 @@ describe("Update a Swiss tournament", () => {
   });
 
   test("Data has expected values", () => {
-    expect(data.startsAt).toBe("2023-08-22T20:00:00Z");
+    expect(data.status).toBe("created");
   });
 });
 
